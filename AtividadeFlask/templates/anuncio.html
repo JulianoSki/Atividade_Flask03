@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <h1>SKITEC COMMERCE</h1>
+    </div>
+
+    <form class="formulario" action="/anuncio/anunciar" method='post'>
+        <p>
+        <h4>Faça um anúncio preenchendo o formulário abaixo</p>
+        </h4>
+
+        <div class="col-md-4 mb-3">
+            <label for="nome">Nome:</label>
+            <input type="text" class=form-control id="nome" name="nome" placeholder="Digite seu nome*" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="desc">Descrição:</label>
+            <input type="text" class=form-control id="desc" name="desc" placeholder="Qual a descrição*" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="qtd">Quantidade:</label>
+            <input type="int" class=form-control id="qtd" name="qtd" placeholder="Digite a quantidade*" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="preco">Preço:</label>
+            <input type="float" class=form-control id="preco" name="preco" placeholder="Digite o valor*" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="categoria">Categoria:</label>
+            <input type="text" class=form-control id="categoria" name="categoria" placeholder="Digite a categoria*"
+                required>
+        </div>
+
+        <!--div class="form-group">
+            <label for="exampleFormControlFile1">Inserir Imagem:</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div-->
+
+        <div class="field radiobox">
+            <span>Observações</span>
+            <input type="radio" name="observacoes" id="sim" value="sim" checked><label for="sim">Sim</label>
+            <input type="radio" name="observacoes" id="nao" value="nao"><label for="nao">Não</label>
+        </div>
+
+        <div class="field">
+            <label for="mensagem">Sua mensagem:</label>
+            <textarea name="mensagem" id="mensagem" placeholder="Observações"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Anunciar</button>
+    </form>
+
+    <div class="container">
+        <div class="page-header">
+            <h4>Lista de {{titulo}}</h4>
+        </div>
+
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thread-default">
+                <tr>
+                    <th>Nome</th>
+                    <th>Desc</th>
+                    <th>Qtd</th>
+                    <th>Preco</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for anuncio in anuncios %}
+                <tr>
+                    <td>{{ anuncio.nome }}</td>
+                    <td>{{ anuncio.desc }}</td>
+                    <td>{{ anuncio.qtd }}</td>
+                    <td>{{ anuncio.preco }}</td>
+                    <td>{{ anuncio.categoria }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</body>
+</form>
+
+</html>

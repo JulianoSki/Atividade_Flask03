@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <h1>SKITEC COMMERCE</h1>
+    </div>
+
+    <form class="formulario" action="/usuario/editar/{{ usuario.id }}" method='post'>
+        <div class="page-header">
+            <h4>Editar Cadastro</h4>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="nome">Nome:</label>
+            <input type="text" class=form-control id="nome" name="nome" value="{{usuario.nome}}"></p>
+        </div>
+
+
+
+        <div class="col-md-4 mb-3">
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" class=form-control id="sobrenome" name="sobrenome" value="{{usuario.sobrenome}}"></p>
+        </div>
+
+
+        <div class="col-md-4 mb-3">
+            <label for="cpf">CPF:</label>
+            <input type="text" class=form-control id="cpf" name="cpf" value="{{usuario.CPF}}"></p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="email">E-Mail:</label>
+            <input type="text" class=form-control id="email" name="email" value="{{usuario.email}}"></p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="telefone">Telefone:</label>
+            <input type="text" class=form-control id="telefone" name="telefone" value="{{usuario.telefone}}"></p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="passwd">Password:</label>
+            <input type="text" class=form-control id="passwd" name="passwd" value="{{usuario.senha}}"></p>
+
+            <button type="submit" class="btn btn-primary">Alterar</button>
+    </form>
+    <a href={{url_for("usuario")}}> Cancelar</a>
+    </div>
+    </form>
+</body>
+
+</html>

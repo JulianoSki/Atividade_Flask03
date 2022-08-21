@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <h1>SKITEC COMMERCE</h1>
+    </div>
+
+    <form class="formulario" action="/endereco/editar/{{ endereco.id }}" method='post'>
+        <div class="page-header">
+            <h4>Editar Endereço</h4>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" class=form-control id="logradouro" name="logradouro" value="{{endereco.logradouro}}">
+        </div>
+
+
+
+        <div class="col-md-4 mb-3">
+            <label for="numero">Número:</label>
+            <input type="int" class=form-control id="numero" name="numero" value="{{endereco.numero}}">
+        </div>
+
+
+        <div class="col-md-4 mb-3">
+            <label for="cep">CEP:</label>
+            <input type="int" class=form-control id="cep" name="cep" value="{{endereco.cep}}">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="bairro">Bairro:</label>
+            <input type="text" class=form-control id="bairro" name="bairro" value="{{endereco.bairro}}">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class=form-control id="cidade" name="cidade" value="{{endereco.cidade}}">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="estado">Estado:</label>
+            <input type="text" class=form-control id="estado" name="estado" value="{{endereco.estado}}">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="complemento">Complemento:</label>
+            <input type="text" class=form-control id="complemento" name="complemento" value="{{endereco.complemento}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Alterar</button>
+    </form>
+    <a href={{url_for("endereco")}}> Cancelar</a>
+    </div>
+    </form>
+</body>
+
+</html>
